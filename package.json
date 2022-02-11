@@ -1,0 +1,19 @@
+{
+  "name": "projectnode",
+  "version": "1.0.0",
+  "description": "ejercicio para youtouch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feeder-afk/projectnode-youtouch.git"
+  },
+  "author": "Cristian Borgoño",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feeder-afk/projectnode-youtouch/issues"
+  },
+  "homepage": "https://github.com/feeder-afk/projectnode-youtouch#readme"
+}
