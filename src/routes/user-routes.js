@@ -11,8 +11,9 @@ router.get('/', async (req, res) => {
 
 //new user
 router.post('/', async(req, res) => {            
-    let { name, mail } = req.body;
-
+    let { username, usermail } = req.body;
+    let us = new User({ username, usermail });   
+    res.json(us);
     /*
     let us = new User({ name, mail });    
     await us.save();

@@ -43,7 +43,7 @@ section img {
   width: 100%;
 }
 * {
-  font-size: 15px;
+  font-size: 16px;
   font-family: 'Lato', sans-serif;
   text-decoration: none;
   color: #424242;
@@ -187,14 +187,14 @@ body {
 }
 .koodsMenu .koodsMenuItem a {
   padding: 1rem 3rem;
-  font-size: 15px;
+  font-size: 16px;
   flex: 1;
   display: flex;
   align-items: center;
   color: #424242;
 }
 .koodsMenu .koodsMenuItem a i {
-  font-size: 18px;
+  font-size: 19.2px;
   margin-right: 1.5rem;
 }
 .koodsMenu .koodsMenuItem .toggleSubMenuItems {
@@ -567,7 +567,7 @@ body {
 #GalleryKoods .GalleryKoodsTitle {
   padding: 0 1rem;
   background: #fff;
-  font-size: 18px;
+  font-size: 19.2px;
   display: flex;
   flex-direction: column;
 }
@@ -917,22 +917,22 @@ h6 * {
   padding-right: 0.5rem;
 }
 h1 {
-  font-size: 30px;
+  font-size: 32px;
 }
 h2 {
-  font-size: 27px;
+  font-size: 28.8px;
 }
 h3 {
-  font-size: 22.5px;
+  font-size: 24px;
 }
 h4 {
-  font-size: 19.5px;
+  font-size: 20.8px;
 }
 h5 {
-  font-size: 16.5px;
+  font-size: 17.6px;
 }
 h6 {
-  font-size: 16.5px;
+  font-size: 17.6px;
 }
 .h {
   text-transform: capitalize;
@@ -982,7 +982,7 @@ blockquote {
   color: #0a0d10;
   margin: 1rem 0;
   display: flex;
-  font-size: 18px;
+  font-size: 19.2px;
   font-style: italic;
 }
 q.tiktok-embed,
@@ -994,7 +994,7 @@ blockquote.tiktok-embed {
   margin: 1rem auto;
   display: flex;
   justify-content: center;
-  font-size: 18px;
+  font-size: 19.2px;
   font-style: inherit;
 }
 q {
@@ -1008,7 +1008,7 @@ q::before {
   left: 0;
   position: absolute;
   color: #304050;
-  font-size: 37.5px;
+  font-size: 40px;
 }
 q::after {
   display: none;
@@ -1030,7 +1030,7 @@ dl {
 dl dt {
   font-weight: normal;
   margin: 1rem 0;
-  font-size: 16.5px;
+  font-size: 17.6px;
 }
 dl dd {
   margin-bottom: 0.5rem;
@@ -1170,7 +1170,7 @@ table {
 table caption {
   margin-top: 0.5rem;
   text-align: right;
-  font-size: 13.5px;
+  font-size: 14.4px;
   font-style: italic;
 }
 table thead {
@@ -1778,7 +1778,7 @@ textarea::-webkit-scrollbar-track {
   text-transform: uppercase;
 }
 .koodsAppMenu li a {
-  font-size: 19.5px;
+  font-size: 20.8px;
 }
 .koodsAppMenu li.active a {
   font-weight: bold;
@@ -1850,9 +1850,6 @@ textarea::-webkit-scrollbar-track {
 /*
 TODO: Tu codigo nuevo aca
 */
-* {
-  font-weight: lighter;
-}
 html,
 body,
 #App,
@@ -1872,21 +1869,25 @@ body,
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 0 2rem;
 }
 .form-area form .group {
   width: 100%;
 }
+.form-area form .group.links {
+  margin-top: 2rem;
+  justify-content: center;
+}
 .alert {
   display: none;
+}
+.alert.show {
+  display: flex;
 }
 .users-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-y: auto;
 }
 .users-list .user-item {
   display: flex;
