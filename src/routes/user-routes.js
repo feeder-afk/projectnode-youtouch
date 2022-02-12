@@ -1,5 +1,7 @@
 const { Router } = require('express');
 const router = Router();
+
+const Post = require( '../models/post' );
 const User = require( '../models/user' );
 
 //read all
@@ -10,10 +12,22 @@ router.get('/', async (req, res) => {
 });
 
 //new user
-router.post('/', async(req, res) => {            
+router.post('/', async(req, res) => {     
     let { username, usermail } = req.body;
-    let us = new User({ username, usermail });   
-    res.json(us);
+    let _res = {};
+
+    if( !username || !/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test( usermail) ){
+        res.json({
+            'error': true,
+            'msg': 'Los datos ingresados no son válidos'
+        });
+    }else{
+        let us = new User({ username, usermail });   
+        res.json(us);
+    }
+
+    res.json( _res );
+    
     /*
     let us = new User({ name, mail });    
     await us.save();
