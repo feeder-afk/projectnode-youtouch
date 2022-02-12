@@ -8,7 +8,8 @@ class AllPost extends React.Component{
 
     render(){
         return(
-            <div className="col-xs-12 col-md-9">               
+            <div className="col-xs-12 col-md-9"> 
+                <h3>Posteos Realizados</h3>              
                 <div className="users-list">
                    {
                        this.props.posts.map( post => <OnePost 
@@ -18,7 +19,7 @@ class AllPost extends React.Component{
                             author={post.user.name}
                             mail={post.user.mail} 
                             date_create={post.date_create} 
-                            content={post.content} /> )
+                            content={post.content} /> ) 
                    }                    
                 </div>
             </div>

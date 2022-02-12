@@ -1,19 +1,18 @@
 import React, {Component} from 'react';
+
 import NewPostForm from './components/new-post';
 import AllPost from './components/view-posts';
 
-
-class App extends Component{
+class Home extends Component{
+   
     constructor(props){
         super(props);
         
         this.state = {
             posts: []
         }       
-
+        , {Component}
         this.fetchPosts = this.fetchPosts.bind(this);
-        
-        //this.
     }    
     
     fetchPosts = function(){
@@ -32,11 +31,9 @@ class App extends Component{
     render(){
         return (            
             <div className="container-fluid mg-y">
-                <div className="row midle-xs">
-                    {/* Creación de usuarios Area */}
-                    <NewPostForm fetchPosts={this.fetchPosts}/> 
-
-                    {/* Gestionar Usuarios Area*/}
+                <a href="/users">Gestionar Usuarios</a>
+                <div className="row midle-xs">                 
+                    <NewPostForm fetchPosts={this.fetchPosts}/>                    
                     <AllPost fetchPosts={this.fetchPosts} posts={this.state.posts}/>
                 </div>                
             </div>            
@@ -44,4 +41,4 @@ class App extends Component{
     }
 }
 
-export default App;
+export default Home;

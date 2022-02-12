@@ -4,12 +4,12 @@ class OnePost extends React.Component{
     constructor(props){
         super(props);
 
-        this.deletePost = this.deletePost.bind(this);
-    }
+        this.deleteUser = this.deleteUser.bind(this);
+    }    
 
-    deletePost(e){
-        if( confirm('Esta seguro de querer eliminar este post') ){
-            fetch(`api/post/${this.props.id}`,{
+    deleteUser(e){
+        if( confirm('Esta seguro de querer eliminar este usuario, se eliminarán todos sus posts') ){
+            fetch(`api/user/${this.props.id}`,{
                 method: 'DELETE',
                 //body: JSON.stringify( this.key ),
                 headers: {
@@ -23,8 +23,8 @@ class OnePost extends React.Component{
                     if( data.error ){
                         //this.setState({error: data.msg });
                     }else{                   
-                        M.toast({ html: 'Post Eliminado', classes : 'success' });
-                        this.props.fetchPosts();                    
+                        M.toast({ html: 'Usuario Eliminado', classes : 'success' });
+                        this.props.fetchUsers();                    
                     }
                 }
             ).catch(
@@ -41,12 +41,14 @@ class OnePost extends React.Component{
         return(                        
             <div className="user-item">
                 <div className="head-item">                    
-                    <div className="item-id">{this.props.author} ({this.props.mail})</div>
+                    <div className="item-id">{this.props.id}</div>
                     <div className="item-date-create">{date.toDateString()}</div>
                 </div>
-                <div className="item-info">{this.props.content}</div>                
+                <div className="item-info"><span>Nombre: </span>{this.props.username}</div> 
+                <div className="item-info"><span>Mail: </span>{this.props.usermail}</div>                               
                 <div className="actions">
-                    <form method="post" onSubmit={this.deletePost} >
+                    
+                    <form method="post" onSubmit={this.deleteUser} >
                         <input type="submit" className="btn canvas delete-me sm " value="eliminar"/>
                     </form>
                 </div> 

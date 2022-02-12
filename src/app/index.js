@@ -1,6 +1,16 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import App from './App';
+import Home from './home';
+import User from './users';
 
-ReactDom.render(<App/>, document.getElementById('App'));
+ReactDom.render(
+    <BrowserRouter>
+        <Routes>            
+            <Route path="/users" element={<User />}/> 
+            <Route path="/" element={<Home />}/>       
+        </Routes>        
+    </BrowserRouter> 
+    ,document.getElementById('App')
+);

@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "webpack": "webpack --mode development --watch",
-    "less" : "lessc src/app/less/style.less src/public/style.css"
+    "less": "lessc src/app/less/style.less src/public/style.css"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,9 @@
   "dependencies": {
     "express": "4.17.2",
     "mongoose": "6.2.1",
-    "morgan": "1.10.0"
+    "morgan": "1.10.0",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
