@@ -4,7 +4,9 @@
   "description": "ejercicio para youtouch",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "webpack": "webpack --mode development"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,17 @@
   "bugs": {
     "url": "https://github.com/feeder-afk/projectnode-youtouch/issues"
   },
-  "homepage": "https://github.com/feeder-afk/projectnode-youtouch#readme"
+  "homepage": "https://github.com/feeder-afk/projectnode-youtouch#readme",
+  "dependencies": {
+    "express": "4.17.2",
+    "mongoose": "6.2.1",
+    "morgan": "1.10.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.15",
+    "webpack": "5.68.0",
+    "webpack-cli": "4.9.2"
+  }
 }
