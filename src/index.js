@@ -13,8 +13,7 @@ app.set('port', process.env.PORT || 3000);
 app.use( express.urlencoded( {extended: false} ) );
 app.use( express.json() );
 
-app.use( '/api/user', require('./routes/user-routes') );
-//app.use( '/api/post', require('./routes/post-routes') );
+app.use( '/api/post', require('./routes/user-routes') );
 
 app.use( express.static( path.join( __dirname, 'public' ) ) );
 

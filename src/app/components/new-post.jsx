@@ -13,7 +13,7 @@ class NewPostForm extends React.Component{
         }
         
         this.userSend = function(e){           
-            fetch('/api/user',{
+            fetch('/api/post',{
                 method: 'post',
                 body: JSON.stringify( this.state ),
                 headers: {
@@ -32,8 +32,11 @@ class NewPostForm extends React.Component{
                             error: '',
                             success: true,
                             username: '',
+                            userpost: '',
                             usermail: ''
                         });
+                        this.props.fetchPosts();
+                        console.log( data );
                     }
                 }
             ).catch(
@@ -49,7 +52,8 @@ class NewPostForm extends React.Component{
             this.setState({
                 [name]: value
             });
-        }.bind(this);       
+        }.bind(this);     
+        
     }
 
     render(){
@@ -59,21 +63,21 @@ class NewPostForm extends React.Component{
                     <form onSubmit={this.userSend} method="post" action='api/user'>    
                         <h3>Realizar Posteo</h3>
                         <div className="group">                                    
-                            <input type="text" name="username" onChange={this.handleChange} placeholder='Nombre'/>                                   
+                            <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder='Nombre'/>                                   
                         </div>   
 
                         <div className="group">
-                            <input type="mail" name="usermail" onChange={this.handleChange} placeholder='Mail'/>
+                            <input type="mail" name="usermail" value={this.state.usermail} onChange={this.handleChange} placeholder='Mail'/>
                         </div>  
 
                         <div className="group">
-                            <textarea name="userpost" onChange={this.handleChange} placeholder="Contenido del post"/>
+                            <textarea name="userpost" value={this.state.userpost} onChange={this.handleChange} placeholder="Contenido del post"/>
                         </div>  
                         
-                        <input type="submit" className="btn" value="Crear Usuario"/>
+                        <input type="submit" className="btn" value="Enviar Post"/>
 
                         <div className={"alert success " + ( this.state.success ? 'show': '' )}>
-                            El usuario se ha creado
+                            Post Enviado
                         </div> 
 
                         <div id="error-alert" className={"alert error " + (this.state.error ? 'show' : '')} >

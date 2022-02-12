@@ -1862,7 +1862,6 @@ body,
   height: 100%;
 }
 .form-area {
-  display: flex;
   align-items: center;
 }
 .form-area form {
@@ -1892,7 +1891,6 @@ body,
 .users-list .user-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
@@ -1909,9 +1907,8 @@ body,
   font-size: 1.1rem;
   color: #8a1a54;
 }
-.users-list .user-item .item-info span {
-  color: #304050;
-  margin-right: 1rem;
+.users-list .user-item .item-info {
+  text-align: initial;
 }
 .users-list .user-item .actions {
   display: flex;
