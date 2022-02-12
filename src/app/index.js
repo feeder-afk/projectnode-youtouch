@@ -1,12 +1,6 @@
-import React, {Component} from 'react';
-import { render } from 'react-dom';
+import React from 'react';
+import ReactDom from 'react-dom';
 
-class App extends Component{
-    render(){
-        return (
-            <h1>Hola</h1>
-        )
-    }
-}
+import App from './App';
 
-render(<App/>, document.getElementById('app'));
+ReactDom.render(<App/>, document.getElementById('App'));
