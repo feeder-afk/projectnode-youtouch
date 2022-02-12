@@ -8,8 +8,8 @@ class NewPostForm extends React.Component{
             username: '',
             usermail: '',
             userpost: '',
-            error: '',
-            success: false
+            //error: '',
+            //success: false
         }
         
         this.userSend = function(e){           
@@ -27,15 +27,17 @@ class NewPostForm extends React.Component{
                 data => {
                     if( data.error ){
                         this.setState({error: data.msg });
+                        M.toast({ html: data.msg , classes: 'error'});
                     }else{
                         this.setState({
-                            error: '',
-                            success: true,
+                            //error: '',
+                            //success: true,
                             username: '',
                             userpost: '',
                             usermail: ''
                         });
                         this.props.fetchPosts();
+                        M.toast({ html: 'Post Creado' , classes: 'success'});
                         console.log( data );
                     }
                 }
@@ -67,7 +69,7 @@ class NewPostForm extends React.Component{
                         </div>   
 
                         <div className="group">
-                            <input type="mail" name="usermail" value={this.state.usermail} onChange={this.handleChange} placeholder='Mail'/>
+                            <input type="email" name="usermail" value={this.state.usermail} onChange={this.handleChange} placeholder='Mail'/>
                         </div>  
 
                         <div className="group">
@@ -75,14 +77,6 @@ class NewPostForm extends React.Component{
                         </div>  
                         
                         <input type="submit" className="btn" value="Enviar Post"/>
-
-                        <div className={"alert success " + ( this.state.success ? 'show': '' )}>
-                            Post Enviado
-                        </div> 
-
-                        <div id="error-alert" className={"alert error " + (this.state.error ? 'show' : '')} >
-                            {this.state.error}
-                        </div>                          
                     </form>
                 </div>                
             </div>   

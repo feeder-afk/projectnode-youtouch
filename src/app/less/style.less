@@ -9,11 +9,38 @@ TODO: Tu codigo nuevo aca
 
 html, body, #App, .container-fluid{
     width: 100%;
-    height: 100%;
+    height: 100%;    
 }
 
 .row, .form-area{
     height: 100%;
+}
+
+#toast-container{    
+    min-width: 250px;    
+    //background-color: #333;
+    //color: #fff !important;
+    text-align: center;
+    border-radius: 2px;
+    //padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 2rem;
+    bottom: 2rem;
+    //font-size: 17px;
+    
+    .toast{
+        padding: 1rem 2rem !important;
+        .default-color-setting;
+
+        &.error{
+            .error;
+        }
+    
+        &.success{
+            .success;
+        }
+    }  
 }
 
 .form-area{

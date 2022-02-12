@@ -1861,6 +1861,37 @@ body,
 .form-area {
   height: 100%;
 }
+#toast-container {
+  min-width: 250px;
+  text-align: center;
+  border-radius: 2px;
+  position: fixed;
+  z-index: 1;
+  left: 2rem;
+  bottom: 2rem;
+}
+#toast-container .toast {
+  padding: 1rem 2rem !important;
+  background-color: #f4f4f4;
+  /* border-color: darken(@info-color, 20%); */
+  color: #424242;
+}
+#toast-container .toast.error {
+  background-color: #fae3e5;
+  /* border-color: lighten( @error-color, 20%);  */
+  color: #dc3545;
+}
+#toast-container .toast.error * {
+  color: #dc3545;
+}
+#toast-container .toast.success {
+  background-color: #afecbd;
+  /* border-color: lighten( @success-color, 20%);  */
+  color: #28a745;
+}
+#toast-container .toast.success * {
+  color: #28a745;
+}
 .form-area {
   align-items: center;
 }

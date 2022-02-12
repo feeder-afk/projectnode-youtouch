@@ -8,8 +8,7 @@ class AllPost extends React.Component{
 
     render(){
         return(
-            <div className="col-xs-12 col-md-9">
-
+            <div className="col-xs-12 col-md-9">               
                 <div className="users-list">
                    {
                        this.props.posts.map( post => <OnePost 
