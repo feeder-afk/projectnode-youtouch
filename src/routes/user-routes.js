@@ -6,13 +6,13 @@ const router = Router();
 const Post = require( '../models/post' );
 const User = require( '../models/user' );
 
-//read all
+//read all posts
 router.get('/', async (req, res) => {
     let posts = await Post.find().populate('user');    
     res.json(posts);
 });
 
-//new user
+//new post
 router.post('/', async(req, res) => {     
     let { username, usermail, userpost } = req.body;
     let _res = {};
@@ -48,9 +48,6 @@ router.post('/', async(req, res) => {
         _res = {
             'success': true
         };
-        
-        //res.json(us);
-        
     }
 
     res.json( _res );
@@ -64,7 +61,7 @@ router.post('/', async(req, res) => {
     */
 });
 
-//read user
+//read post
 router.get('/:id', async (req, res) => {
     /*
     let user = await User.findById( req.params.id );
@@ -73,7 +70,7 @@ router.get('/:id', async (req, res) => {
 });
 
 
-//create or update user
+//create or update post
 router.put('/:id', async(req, res) => {
     /*
     let {name, mail} = req.body;
@@ -85,14 +82,12 @@ router.put('/:id', async(req, res) => {
     */
 });
 
-//delete user
-router.delete('/:id', async(req, res ) => {
-    /*
-    await User.findByIdAndRemove( req.params.id );
+//delete post
+router.delete('/:id', async(req, res ) => {    
+    await Post.findByIdAndRemove( req.params.id );
     res.json({
         "msg" : "deleted"
     });
-    */
 });
 
 module.exports = router;

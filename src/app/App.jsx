@@ -12,6 +12,7 @@ class App extends Component{
         }       
 
         this.fetchPosts = this.fetchPosts.bind(this);
+        
         //this.
     }    
     
@@ -26,9 +27,7 @@ class App extends Component{
 
     componentDidMount(){
         this.fetchPosts(); //No es la mejor manera de hacerlo ya que consume muchos recursos
-    }
-    
-    
+    }    
 
     render(){
         return (            
@@ -38,7 +37,7 @@ class App extends Component{
                     <NewPostForm fetchPosts={this.fetchPosts}/> 
 
                     {/* Gestionar Usuarios Area*/}
-                    <AllPost posts={this.state.posts}/>
+                    <AllPost fetchPosts={this.fetchPosts} posts={this.state.posts}/>
                 </div>                
             </div>            
         )

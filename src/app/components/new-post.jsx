@@ -60,7 +60,7 @@ class NewPostForm extends React.Component{
         return (
             <div className="col-xs-12 col-md-3">
                 <div className='form-area'>       
-                    <form onSubmit={this.userSend} method="post" action='api/user'>    
+                    <form onSubmit={this.userSend}>    
                         <h3>Realizar Posteo</h3>
                         <div className="group">                                    
                             <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder='Nombre'/>                                   
